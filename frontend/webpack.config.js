@@ -25,7 +25,11 @@ module.exports = {
       host: 'localhost',
       port: 3000,
       proxy: 'http://localhost:8000/',
-      cors: true
+      cors: true,
+      middleware: function (req, res, next) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        next();
+      }
     }),
     new CopyWebpackPlugin([
       {from: './**/*.html'}
