@@ -5,8 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "NODE_ENV=test karma start",
-    "start": "NODE_ENV=dev webpack --watch --config 'frontend/webpack.config.js'",
-    "prod": "NODE_ENV=production webpack --config 'frontend/webpack.config.js'"
+    "start": "webpack --watch --config 'frontend/webpack.config.js'"
   },
   "repository": {
     "type": "git",
