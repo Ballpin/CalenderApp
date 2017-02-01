@@ -1,9 +1,9 @@
-<div class='animate-container' ng-show='$ctrl.shouldShow'>
-  <div id="eventModal" class='animate-show-hide' ng-show='$ctrl.shouldShow'>
+<div id="eventModal" class='animate-show-hide' ng-show='$ctrl.shouldShow'>
   <form name='adminForm' 
         class='event-admin-container' 
         ng-submit='$ctrl.addItem()'
         novalidate >
+    <button type='button' ng-click='$ctrl.shouldShow = !$ctrl.shouldShow'>hide</button>
     <div class='event-admin-item'>
       <input type='text'
              placeholder='New event'
@@ -11,42 +11,36 @@
              ng-change='$ctrl.sayHiOnChange($ctrl.newEvent.title)'
              ng-required='true'>
     </div>
-    <div class='event-admin-item' ng-show='$ctrl.newEvent.title'>
+    <div class='event-admin-item'>
       <input type='text'
              class='datepicker'
-             locale='sv'
-             format="D MMMM YYYY, HH:mm"
+             locale='en-UK'
              placeholder="Select start time"
              max-view='hour'
              today='true'
-             min-date='$ctrl.today'
-             max-date='endTime'
              keyboard='true'
              ng-model='$ctrl.newEvent.startTime'
              moment-picker="startTime"
              ng-required='true'></input>
     </div>
-    <div class='event-admin-item' ng-show='startTime'>
+    <div class='event-admin-item'>
       <input type='text'
              class='datepicker'
-             locale='sv'
-             format="D MMMM YYYY, HH:mm"
+             locale='en-UK'
              placeholder="Select end time"
              max-view='hour'
              today='true'
-             min-date='startTime || $ctrl.today'
              keyboard='true'
              ng-model='$ctrl.newEvent.endTime'
              moment-picker="endTime"
              ng-required='true'></input>
     </div>
-    <div class='event-admin-item submit'>
+    <div class='event-admin-item'>
       <input type='submit' 
              class='eventSubmitBtn'
              value='add event' 
              ng-disabled='adminForm.$invalid'>
     </div>
-    <p class='event-admin-item error-text animate-show-hide' ng-show='$ctrl.errorText'>{{$ctrl.errorText}}</p>
+    <p ng-show='$ctrl.errorText'>{{$ctrl.errorText}}</p>
   </form>
-</div>
 </div>

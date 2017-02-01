@@ -37,7 +37,6 @@ module.exports = function(config) {
       './node_modules/angular-animate/angular-animate.js',
       './node_modules/angular-ui-router/release/angular-ui-router.js',
       './node_modules/moment/moment.js',
-      './node_modules/moment/locale/sv.js',
       './node_modules/angular-mocks/angular-mocks.js',
       'frontend/app/app.js',
       'frontend/app/tests.entry.js'
