@@ -18,6 +18,11 @@ module.exports = {
     sourceMapFilename: '[file].map'
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      },
+    }),
     new BundleTracker({filename: './frontend/webpack-stats.json'}),
     new BrowserSyncPlugin({
       // browse to http://localhost:3000/ during development,
@@ -25,7 +30,11 @@ module.exports = {
       host: 'localhost',
       port: 3000,
       proxy: 'http://localhost:8000/',
-      cors: true
+      cors: true,
+      middleware: function (req, res, next) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        next();
+      }
     }),
     new CopyWebpackPlugin([
       {from: './**/*.html'}

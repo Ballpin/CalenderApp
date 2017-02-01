@@ -1,3 +1,17 @@
+.animate-container {
+  max-height: 300px;
+  &.ng-hide {
+    max-height: 0;
+  }
+  &.ng-hide-remove {
+    transition: all ease 0.3s;
+  }
+  &.ng-hide-add {
+    transition: all ease-in 0.25s;
+  }
+ 
+}
+
 #eventModal {
   margin-top: 1em;
   width: 100%;
@@ -15,13 +29,25 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    flex: 1;
+    flex-wrap: wrap;
     padding: 2em;
 
     .event-admin-item {
-      flex-grow: 1;
       margin: 0.5em;
+      min-width: 180px;
+      &.submit {
+        margin-left: 4em;
+      }
+      &.error-text {
+        min-width: 100%;
+        text-align: center;
+        color: white;
+        &.animate-show-hide.ng-hide-remove {
+          animation: flipInX ease 0.5s;
+        }
+      }
     }
+    
     .datepicker {
       
     }
@@ -77,7 +103,7 @@
 @keyframes flyOut {
   0% {
   }
+  50% {transform: translate3d(2000px, 0, 0);}
   100% {
-    transform: translate3d(2000px, 0, 0);
   }
 }
