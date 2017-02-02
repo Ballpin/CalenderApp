@@ -1,5 +1,6 @@
 describe('Users Factory', () => {
-  let Users;
+  let Users, login;
+
 
   // Load the module before testing
   beforeEach(angular.mock.module('usersApp'));
@@ -13,7 +14,13 @@ describe('Users Factory', () => {
     expect(Users).toBeDefined();
   });
 
-  describe('.login', () => {
+  describe('.login()', () => {
+
+    it('should exist', () => {
+      expect(Users.login).toBeDefined();
+    });
+
+
 
   });
 

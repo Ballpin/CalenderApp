@@ -1,3 +1,11 @@
+users-app {
+  height: 100%;
+  width: 100%;
+}
+div[ng-app="app"] {
+  width: 100%;
+}
+
 .login-container {
   display: flex;
   flex-direction: column;
@@ -5,7 +13,10 @@
   align-items: center;
   flex: 1;
   background-color: #364150;
-
+  height: 100%;
+  width: 100%;
+  .error {
+    display: none; }
   > .login {
     position: relative;
     z-index: 1;

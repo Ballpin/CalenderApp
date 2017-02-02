@@ -1,14 +1,20 @@
 export default function ($scope, Users) {
-  let userRegister = {
-    "username": 'test1234',
-    "password": '1234',
-    "email": 'test@test.se'
-  };
 
-  Users.register(JSON.stringify(userRegister)).
-  then((success) => {
-      console.log(success);
-  }, (error) => {
-    console.log(error);
-  });
+  $scope.user = {};
+
+  $scope.loginUser = () => {
+    Users.login(JSON.stringify($scope.user))
+      .then((success) => {
+        window.location.href = '/event'
+      }, (error) => {
+        angular.element(document.querySelector('.error')).html('Something went wrong. <br> Try again!').css('display', 'block');
+      });
+  }
+
+  // Users.register(JSON.stringify(userRegister)).
+  // then((success) => {
+  //     console.log(success);
+  // }, (error) => {
+  //   console.log(error);
+  // });
 }
