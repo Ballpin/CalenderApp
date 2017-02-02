@@ -7,7 +7,11 @@ export default function ($scope, $rootScope, eventListFactory) {
 	$rootScope.z = 0;
 
 	// function to show current month
-	$scope.initCal = function () {
+	
+  --1) $scope.initCal = function () {
+  
+  --2) this.initCal = () => { 
+    
 			$rootScope.time_now = moment().format('YYYY, MMMM');
 			$rootScope.month_header = document.getElementById('current_month');
 			$rootScope.month_header.innerHTML = $rootScope.time_now;
@@ -16,11 +20,14 @@ export default function ($scope, $rootScope, eventListFactory) {
 			$rootScope.x = 0;
 			$rootScope.z = 0;
 			$scope.showday();
+            //this.showday;
 			$scope.showevent();
-
+           // this.showevent;
 		}
 		// function to show date in HTML
+     
 	$scope.showday = function () {
+   // this.showday = () => { 
 		$rootScope.showdays = moment($scope.time).daysInMonth();
 		// show how many days in month
 		$rootScope.iddate = moment().format('YYYY, MM, ');
@@ -110,6 +117,7 @@ $scope.last_month = function () {
 
 // show event from database
 $scope.showevent = function (events) {
+//this.showevent = () => {   
 		let DayList = document.querySelectorAll('#show_totaldays .day');
 		eventListFactory.getList().then((list) => {
 			for (let i = 0; i < DayList.length; i++) {
