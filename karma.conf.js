@@ -1,7 +1,8 @@
 var webpack = require('webpack');
 
 module.exports = function(config) {
-  config.set({
+  
+  const configuration = {
     basePath: '',
     webpack: {
       module: {
@@ -55,6 +56,16 @@ module.exports = function(config) {
       require("karma-phantomjs-launcher"),
       require("karma-firefox-launcher"),
       require("karma-webpack"),
-    ]
-  })
+    ],
+    customLaunchers: {
+        Chrome_travis_ci: {
+            base: 'Chrome',
+            flags: ['--no-sandbox']
+        }
+    }
+  };
+  if (process.env.TRAVIS) {
+    configuration.browsers = ['Chrome_travis_ci'];
+  }
+  config.set(configuration)
 };
