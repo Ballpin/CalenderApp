@@ -60,9 +60,6 @@ class UserLoginSerializer(ModelSerializer):
         else:
             raise ValidationError('This username/email is not valid')
 
-        if user_obj:
-            if not user_obj.check_password(password):
-                raise ValidationError('Incorrect credentials try again!')
 
         data['token'] = 'Some random token'
 
