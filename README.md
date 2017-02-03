@@ -136,6 +136,15 @@ http://localhost:8000/accounts/password_reset
 
 
 
+### Test Users
+
+| Username  | Password | Permissions |
+| --------- | -------- | ----------- |
+| testAdmin | Admin123 | Admin       |
+| testUser  | User123  | User        |
+
+
+
 
 ## REST API
 
