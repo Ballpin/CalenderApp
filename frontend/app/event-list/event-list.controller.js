@@ -8,9 +8,9 @@ export default function ($scope, $rootScope, eventListFactory) {
 
 	// function to show current month
 	
-  --1) $scope.initCal = function () {
-  
-  --2) this.initCal = () => { 
+$scope.initCal = function () {
+
+  this.initCal = () => {
     
 			$rootScope.time_now = moment().format('YYYY, MMMM');
 			$rootScope.month_header = document.getElementById('current_month');
