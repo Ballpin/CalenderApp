@@ -143,3 +143,4 @@ $scope.showevent = function (events) {
     $scope.showevent();
   });
 }
+}
