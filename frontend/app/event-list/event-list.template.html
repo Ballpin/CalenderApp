@@ -19,13 +19,7 @@
     <div id="nextmonth" ng-click="next_month()"> &#62; </div>
   </div>
   <div id="weekday_wrapper">
-    <div class="weekday"> SUN </div>
-    <div class="weekday"> MON </div>
-    <div class="weekday"> TIS </div>
-    <div class="weekday"> WED </div>
-    <div class="weekday"> THU </div>
-    <div class="weekday"> FRI </div>
-    <div class="weekday"> SAT </div>
+    <div ng-repeat='day in weekdays' class="weekday">{{day}}</div>
   </div>
   <div id="show_totaldays"></div>
   <div id="bottomwrapper"> 
