@@ -4,7 +4,7 @@
             <h1>Login</h1>
         </div>
 
-        <div class="error"></div>
+        <div class="error" ng-bind-html="error.text" ng-style="error.css"></div>
 
         <form ng-submit="loginUser();">
             <div class="form-group username">
