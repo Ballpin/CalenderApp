@@ -274,7 +274,10 @@ $calender-size-with-margins: $calender-size/7 - $cal-margins;
       height: 75px;
 
       &.today {
-        background-color: #f0f2f5;
+        background-color: #cdd7e6§;
+      }
+      &.isPast {
+        background-color: lighten(#e4e4e4, 5%);
       }
 
     }

@@ -23,7 +23,10 @@
         </div>
         <div class="week" ng-repeat="week in weeks">
             <span class="calDay"
-                  ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }"
+                  ng-class="{ today: day.
+                              isToday, 'different-month': !day.isCurrentMonth,
+                              isPast: day.isPast,
+                              selected: day.date.isSame(selected) }"
                   ng-click="select(day)" ng-repeat="day in week.days">
                 {{ day.number }}
 
