@@ -1,5 +1,41 @@
 [
   {
+    "pk": 9980,
+    "model": "event.event",
+    "fields": {
+      "Title": "Playtime 1",
+      "Start_Time": "2017-02-07T19:00:00Z",
+      "End_Time": "2017-02-07T20:00:00Z"
+    }
+  },
+  {
+    "pk": 9981,
+    "model": "event.event",
+    "fields": {
+      "Title": "Playtime 2",
+      "Start_Time": "2017-02-09T19:00:00Z",
+      "End_Time": "2017-02-09T20:00:00Z"
+    }
+  },
+  {
+    "pk": 9982,
+    "model": "event.event",
+    "fields": {
+      "Title": "Playtime 3",
+      "Start_Time": "2017-02-08T19:00:00Z",
+      "End_Time": "2017-02-08T20:00:00Z"
+    }
+  },
+  {
+    "pk": 9983,
+    "model": "event.event",
+    "fields": {
+      "Title": "Playtime 4",
+      "Start_Time": "2017-02-07T19:00:00Z",
+      "End_Time": "2017-02-07T20:00:00Z"
+    }
+  },
+  {
     "pk": 9998,
     "model": "auth.user",
     "fields": {

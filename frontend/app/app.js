@@ -2,7 +2,10 @@ import eventAdmin from './event-admin/event-admin.component.js';
 import '../scss/app.scss';
 import eventList from './event-list/event-list.component.js';
 
-const routerApp = angular.module('app', ['ui.router', 'eventAdmin', 'eventList']);
+
+const routerApp = angular.module('app', ['ui.router', 'eventAdmin', 'eventList', 'angularMoment']).run((amMoment) => {
+  amMoment.changeLocale('sv');
+});
 
 routerApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
   let
@@ -15,10 +18,11 @@ routerApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
       name: 'admin',
       url: '/events/admin',
       component: 'eventAdmin'
-    }
+    };
 
-  $stateProvider.state(adminState);
-  $stateProvider.state(eventList);
+  $stateProvider
+    .state(adminState)
+    .state(eventList);
 
   $urlRouterProvider.otherwise('/events');
   $locationProvider.html5Mode(true);

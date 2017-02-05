@@ -9,7 +9,7 @@ module.exports = {
   context: path.join(__dirname, '/app'),
   entry: {
     app: './app.js',
-    vendor: ['angular', 'angular-ui-router', 'angular-animate']
+    vendor: ['angular', 'angular-ui-router', 'angular-animate', 'angular-moment']
   },
   output: {
     path: path.resolve('./frontend/webpack_bundles/'),

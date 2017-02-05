@@ -2,11 +2,7 @@
 {% load i18n %}
 
 {% block content %}
-  <div ng-app='app'>
-    <a ui-sref="admin" ui-sref-active="active">Admin</a>
-    <a ui-sref="eventList" ui-sref-active="active">Event List</a>
-    <div ui-view></div>
-
-
+  <div ng-app='app' class="full-width">
+    <div ui-view class="full-width"></div>
   </div>
 {% endblock %}

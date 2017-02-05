@@ -1,4 +1,5 @@
 import eventListController from './event-list.controller';
+
 export default angular.
   module('eventList', []).
   component('eventList', {

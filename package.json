@@ -45,6 +45,7 @@
     "angular": "^1.6.1",
     "angular-animate": "^1.6.1",
     "angular-datetime-inputs": "^0.1.28",
+    "angular-moment": "^1.0.1",
     "angular-moment-picker": "^0.9.4",
     "angular-ui-router": "^1.0.0-alpha.3",
     "babel-plugin-istanbul": "^3.1.2",
