@@ -74,7 +74,13 @@ describe('eventAdmin component', () => {
       controller.addItem();
       $httpBackend.flush();
     });
-    it('should make a postEvent call with correct post data', () => {})
+    xit('should make a postEvent call with correct post data', () => {})
+    it('should provide a friendly 400 error message', () => {
+      $httpBackend.expectPOST('/api/').respond(400, []);
+      controller.postEvent();
+      $httpBackend.flush();
+      expect(controller.errorText).toBe("Hmm. We seem to have sent a bad request (400). Probably a programmer error!");
+    })
     it('should give an error message when not logged in as admin', () => {
       $httpBackend.expectPOST('/api/').respond(403, []);
       controller.postEvent();
