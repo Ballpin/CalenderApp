@@ -1,0 +1,30 @@
+<div class="login-container">
+    <div class="login">
+        <div class="title">
+            <h1>Login</h1>
+        </div>
+
+        <div class="error" ng-bind-html="error.text" ng-style="error.css"></div>
+
+        <form ng-submit="loginUser();">
+            <div class="form-group username">
+                <input type="text" ng-init="user.username = ''" ng-change="user.email = user.username" ng-model="user.username" id="id_username" placeholder="email">
+            </div>
+
+            <div class="form-group password">
+                <input type="password" ng-init="user.password = ''" ng-model="user.password" id="id_password" placeholder="password">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Enter"/>
+                <input type="hidden" name="next" value="{{ next }}"/>
+            </div>
+            <div class="form-group">
+                <a class="btn-primary" href="">Lost password?</a>
+            </div>
+
+        </form>
+
+
+    </div>
+</div>

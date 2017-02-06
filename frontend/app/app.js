@@ -1,6 +1,7 @@
 import eventAdmin from './event-admin/event-admin.component.js';
 import '../scss/app.scss';
 import eventList from './event-list/event-list.component.js';
+import usersApp from './users/users.component.js';
 
 
 const routerApp = angular.module('app', ['ui.router', 'eventAdmin', 'eventList', 'angularMoment']).run((amMoment) => {
