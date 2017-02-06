@@ -71,3 +71,4 @@ frontend/webpack_bundles/
 webpack-stats.json
 db.sqlite3
 npm-debug.log
+db.json
