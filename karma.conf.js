@@ -35,6 +35,7 @@ module.exports = function(config) {
     },
     files: [
       './node_modules/angular/angular.js',
+      './node_modules/moment/moment.js',
       './node_modules/angular-moment/angular-moment.js',
       './node_modules/angular-animate/angular-animate.js',
       './node_modules/angular-ui-router/release/angular-ui-router.js',
