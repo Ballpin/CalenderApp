@@ -2,15 +2,10 @@ export default function ($scope, eventListFactory, moment, amMoment) {
 
   $scope.showAdmin = () => {
     $scope.$broadcast('showHideAdmin', true);
-  }
-  /*$scope.$on('eventAdded', () => {
-    $scope.showevent();
-  });*/
-
+  };
 
   $scope.selected = _removeTime($scope.selected || moment());
 
-  //scope.selected = scope.selected.day(moment().isoWeekday()).hour(0).minute(0).second(0).millisecond(0) || moment().isoWeekday();
   $scope.month = $scope.selected.clone();
 
   let start = $scope.selected.clone();
@@ -19,7 +14,7 @@ export default function ($scope, eventListFactory, moment, amMoment) {
 
   _buildMonth($scope, start, $scope.month);
 
-  $scope.select = function (day) {
+  $scope.select = function (day) {$
     $scope.selected = day.date;
   };
 
