@@ -7,9 +7,6 @@ export default function ($scope, eventListFactory, moment, amMoment) {
     $scope.showevent();
   });*/
 
-  $scope.bookingMonth = eventListFactory.getList().then((response) => {
-    $scope.bookingMonth = response.data;
-  });
 
   $scope.selected = _removeTime($scope.selected || moment());
 
