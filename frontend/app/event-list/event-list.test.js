@@ -6,28 +6,42 @@ describe('eventList component', () => {
   var $httpBackend;
   var moment;
   var amMoment;
-  var eventListFactory;
+  var mockService;
+  var deferred;
 
   beforeEach(() => {
     angular.mock.module('eventList');
 
-    inject(function($rootScope, $compile, $componentController, _$httpBackend_, _eventListFactory_, _amMoment_, _moment_){
+    angular.mock.module(function($provide){
+      $provide.factory('eventListFactory', function($q){
+        function getList(){
+            deferred = $q.defer();
+              return deferred.promise;
+          }
+          return{getList: getList};
+      });
+    });
+
+    inject(function($rootScope, $compile, $controller, $componentController, _$httpBackend_, eventListFactory, _amMoment_, _moment_){
     $httpBackend = _$httpBackend_;
-    eventListFactory = _eventListFactory_;
+    mockService = eventListFactory;
     moment = _moment_;
     amMoment = _amMoment_;
+
+    spyOn(mockService, 'getList').and.callThrough();
     scope = $rootScope.$new();
     element = angular.element('<event-list></event-list>');
     element = $compile(element)(scope);
-    controller = $componentController('eventList', null, {scope, moment, amMoment, eventListFactory });
+    scope.$apply();
+    controller = $componentController('eventList', {$scope: scope, eventListFactory: mockService});
     });
   });
 
-// check controller
   it('should be defined', () => {
-    expect(controller).not.toBeUndefined();
+    console.log("controller: ", controller)
+    //$httpBackend.whenGET('/api').respond({bajs: 'bajs'});
+    expect(scope.previous).not.toBeUndefined();
   });
-
 
   it('should have previous function', () => {
     expect(controller.previous).toBeDefined();
@@ -49,4 +63,7 @@ describe('eventList component', () => {
     });
   }); 
   
+  it('should make http call to get the event list', () => {
+    expect(mockService.getList).toHaveBeenCalled();
+  });
 });
