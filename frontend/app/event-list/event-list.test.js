@@ -38,8 +38,6 @@ describe('eventList component', () => {
   });
 
   it('should be defined', () => {
-    console.log("controller: ", controller)
-    //$httpBackend.whenGET('/api').respond({bajs: 'bajs'});
     expect(scope.previous).not.toBeUndefined();
   });
 
