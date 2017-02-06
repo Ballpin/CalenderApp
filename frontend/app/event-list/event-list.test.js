@@ -19,17 +19,15 @@ describe('eventList component', () => {
     scope = $rootScope.$new();
     element = angular.element('<event-list></event-list>');
     element = $compile(element)(scope);
-    scope.$apply();
-    controller = $componentController('eventList', null, {$scope: scope, moment, amMoment, eventListFactory});
+    controller = $componentController('eventList', null, {scope, moment, amMoment, eventListFactory });
     });
   });
 
 
   it('should be defined', () => {
-    console.log("controller ? : ", controller)
-    expect(scope).not.toBeUndefined();
+    expect(controller).not.toBeUndefined();
   });
-  
+
 //  it('should have a function to add an event', () => {
 //    expect(controller.initCal).toBeDefined();
 //  });
