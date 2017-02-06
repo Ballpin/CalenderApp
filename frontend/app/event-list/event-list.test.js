@@ -11,7 +11,7 @@ describe('eventList component', () => {
   beforeEach(() => {
     angular.mock.module('eventList');
 
-    inject(function($injector, $rootScope, $compile, $componentController, _$httpBackend_, _eventListFactory_, _amMoment_, _moment_){
+    inject(function($rootScope, $compile, $componentController, _$httpBackend_, _eventListFactory_, _amMoment_, _moment_){
     $httpBackend = _$httpBackend_;
     eventListFactory = _eventListFactory_;
     moment = _moment_;
