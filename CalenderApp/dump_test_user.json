@@ -39,7 +39,7 @@
     "pk": 9998,
     "model": "auth.user",
     "fields": {
-      "username": "testAdmin",
+      "username": "tes1t@test.se",
       "first_name": "Test",
       "last_name": "Admin",
       "is_active": true,
@@ -48,7 +48,7 @@
       "last_login": "1900-01-01T00:00:00Z",
       "user_permissions": [],
       "password": "Admin123",
-      "email": "test@test.se",
+      "email": "tes1t@test.se",
       "date_joined": "1900-01-01T00:00:00Z"
     }
   },
@@ -56,7 +56,7 @@
     "pk": 9999,
     "model": "auth.user",
     "fields": {
-      "username": "testUser",
+      "username": "test@test.se",
       "first_name": "Test",
       "last_name": "User",
       "is_active": true,
