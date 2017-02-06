@@ -4,7 +4,7 @@ import eventList from './event-list/event-list.component.js';
 import usersApp from './users/users.component.js';
 
 
-const routerApp = angular.module('app', ['ui.router', 'eventAdmin', 'eventList', 'angularMoment']).run((amMoment) => {
+const routerApp = angular.module('app', ['ui.router', 'eventAdmin', 'eventList', 'usersApp', 'angularMoment']).run((amMoment) => {
   amMoment.changeLocale('sv');
 });
 
@@ -15,14 +15,14 @@ routerApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
       url: '/events',
       component: 'eventList'
     },
-    adminState = {
-      name: 'admin',
-      url: '/events/admin',
-      component: 'eventAdmin'
+    usersState = {
+      name: 'users',
+      url: '/login',
+      component: 'usersApp'
     };
 
   $stateProvider
-    .state(adminState)
+    .state(usersState)
     .state(eventList);
 
   $urlRouterProvider.otherwise('/events');
