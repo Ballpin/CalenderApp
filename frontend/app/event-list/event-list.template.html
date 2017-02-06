@@ -1,37 +1,40 @@
-
-<div id="wrapper" ng-init="initCal();">
-  <div id="test">
-    <header> 
-      <span id="logo"> Favana Calender </span>
-      <button id="loggain" onClick="window.location.href='/accounts/login'"> LOGGA IN </button>
-      <button id="loggain" ng-click="showAdmin()"> Add event </button>
+<div id="wrapper">
+    <header>
+        <span id="logo"> Favana Calender </span>
+        <button id="loggain" onClick="window.location.href='/accounts/login'"> LOGGA IN</button>
+        <button id="loggain" ng-click="showAdmin()"> Add event</button>
     </header>
-  <event-admin></event-admin>
-  </div>
-  <div id="month_wrapper">
-   <!-- <div id="lastmonth" class="glyphicon glyphicon-chevron-left text-center" ng-click="last_month()"> </div> -->
-    <div id="lastmonth" ng-click="last_month()"> &#60; </div>
-    <div id="month">
-      <span id="current_month"> </span>
-      <br> <span id="show_howmany_day"></span>
-    </div>
-   <!-- <div id="nextmonth" class="glyphicon glyphicon-chevron-right text-center" ng-click="next_month()"> </div> -->
-    <div id="nextmonth" ng-click="next_month()"> &#62; </div>
-  </div>
-  <div id="weekday_wrapper">
-    <div class="weekday"> SUN </div>
-    <div class="weekday"> MON </div>
-    <div class="weekday"> TIS </div>
-    <div class="weekday"> WED </div>
-    <div class="weekday"> THU </div>
-    <div class="weekday"> FRI </div>
-    <div class="weekday"> SAT </div>
-  </div>
-  <div id="show_totaldays"></div>
-  <div id="bottomwrapper"> 
-    <button class="button_view"> MONTH </button>
-    <button class="button_view"> WEEK </button>
-    <button class="button_view" id="today" ng-click="initCal()"> TODAY </button>
-  </div>
-</div>
+    <event-admin></event-admin>
 
+    <div class="calender" ng-init="build">
+        <div class="header">
+            <i class="fa fa-angle-left" ng-click="previous()"></i>
+            <span>{{ month.format("MMMM, YYYY")}}</span>
+            <i class="fa fa-angle-right" ng-click="next()"></i>
+        </div>
+        <div class="week names">
+            <span class="day">Mån</span>
+            <span class="day">Tis</span>
+            <span class="day">Ons</span>
+            <span class="day">Tor</span>
+            <span class="day">Fre</span>
+            <span class="day">Lör</span>
+            <span class="day">Sön</span>
+        </div>
+        <div class="week" ng-repeat="week in weeks">
+            <span class="calDay"
+                  ng-class="{ today: day.
+                              isToday, 'different-month': !day.isCurrentMonth,
+                              isPast: day.isPast,
+                              selected: day.date.isSame(selected) }"
+                  ng-click="select(day)" ng-repeat="day in week.days">
+                {{ day.number }}
+                <br>
+                <span class="listItem" ng-repeat="item in day.listEvents">
+                    {{ item.Start_Time | date: 'HH:mm' }} {{ item.Title }}
+                </span>
+            </span>
+        </div>
+    </div>
+
+</div>

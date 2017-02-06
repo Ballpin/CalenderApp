@@ -1,13 +1,13 @@
-$color_lightblue: rgb(54,198,211);
-$color_darkblue: rgb(54,65,80);
-$color_blue: rgb(101,155,225);
-$color_red: rgb(231,80,90);
+$color_lightblue: rgb(54, 198, 211);
+$color_darkblue: rgb(54, 65, 80);
+$color_blue: rgb(101, 155, 225);
+$color_red: rgb(231, 80, 90);
 
 $font_white: white;
 
 $top_bar: 50px;
 $bottom_bar: 80px;
-$weekheader: rgb(51,122,183);
+$weekheader: rgb(51, 122, 183);
 
 $weekheader_width: 36%;
 
@@ -17,240 +17,301 @@ $calender-size: 960;
 $cal-margins: 8;
 $calender-size-with-margins: $calender-size/7 - $cal-margins;
 
-
-
 #wrapper {
- 
-  height: 50%;
-  margin: 30px auto;
   display: block;
-	max-width: $calender-size+px;
-* { box-sizing: border-box;}
+  width: 100%;
 
-.show { display: block; }
-.hide { display: none; }
-	
-header {
-  height: $top_bar;
-  background-color: $color_darkblue;
-  color: $font_white;
-  font-size: 18px;
-  padding: 10px 0px 10px 20px;
-  margin-left: 0px auto;
+  * {
+    box-sizing: border-box;
+  }
 
-}
-/* button logga in */
-#loggain {
-  width: 80px;
-  height: 30px;
-  padding: 4px 10px;
-  color: $font_white;
-  font-size: 12px;
-  background-color: $color_lightblue;
-  border: 0px;
-  border-radius: $button-radius;
-  left: 50%;
-  position: relative;
-  padding-top: 5px;
-}
+  .show {
+    display: block;
+  }
+  .hide {
+    display: none;
+  }
 
-#month_wrapper {
- 
-  width: 70%;
-  margin: 0px auto;
-  font-size: 20px;
-  text-align: center;
-  
-}
-#month,#lastmonth, #nextmonth {
-  display: inline-block;
-  height: 70px;
-  margin: 0px auto;
-  padding-top: 10px;
-}
+  header {
+    height: $top_bar;
+    background-color: $color_darkblue;
+    color: $font_white;
+    font-size: 18px;
+    padding: 10px 0 10px 20px;
+    margin-left: 0;
+    width: 100%;
 
-#lastmonth, #nextmonth {
-  display: inline-block;
-  width: 50px;
-
-  margin-top: -1px;
-  padding-top: 23px !important;
-}
-#lastmonth{
-  float: left;
-}
-#nextmonth {
-  float: right;
-}
-
-#weekday_wrapper {
-  display: flex;
-  color: $font_white;
-  width: $calender-size !important;
-
-  .weekday{
+  }
+  /* button logga in */
+  #loggain {
+    width: 80px;
     height: 30px;
-    background-color: $weekheader;
+    padding: 4px 10px;
+    color: $font_white;
+    font-size: 12px;
+    background-color: $color_lightblue;
+    border: 0px;
+    border-radius: $button-radius;
+    left: 50%;
+    position: relative;
+    padding-top: 5px;
+  }
+
+  #month_wrapper {
+
+    width: 70%;
+    margin: 0px auto;
+    font-size: 20px;
     text-align: center;
+
+  }
+  #month, #lastmonth, #nextmonth {
+    display: inline-block;
+    height: 70px;
+    margin: 0px auto;
+    padding-top: 10px;
+  }
+
+  #lastmonth, #nextmonth {
+    display: inline-block;
+    width: 50px;
+
+    margin-top: -1px;
+    padding-top: 23px !important;
+  }
+  #lastmonth {
+    float: left;
+  }
+  #nextmonth {
+    float: right;
+  }
+
+  #weekday_wrapper {
+    display: flex;
+    color: $font_white;
+    width: $calender-size !important;
+
+    .weekday {
+      height: 30px;
+      background-color: $weekheader;
+      text-align: center;
+      margin: 1px;
+      padding: 5px 0 0 0;
+      width: $calender-size-with-margins+px;
+    }
+  }
+  #show_totaldays {
+    display: inline-block;
+    width: $calender-size+px;
+    .daytoday, .unday, .day {
+      width: $calender-size-with-margins+px !important;
+      display: inline-block;
+      margin: 1px;
+      height: 90px;
+      padding-right: 7px;
+      text-align: right;
+      float: left;
+    }
+    .daytoday {
+      background-color: $color_red !important;
+      position: relative;
+      color: white;
+    }
+    .unday {
+      background-color: darkgray !important;
+      position: relative;
+
+    }
+    .day {
+
+      background-color: ghostwhite;
+
+    }
+  }
+
+  #today {
+    display: block;
+    position: relative;
+    float: right !important;
+    background-color: $color_red !important;
     margin: 1px;
-    padding: 5px 0 0 0;
-    width: $calender-size-with-margins+px;
-  }
-}
-#show_totaldays {
-	display: inline-block;
-	width: $calender-size+px;
-	.daytoday, .unday, .day {
-		width: $calender-size-with-margins+px !important;
-		display: inline-block;
-		margin: 1px;
-		height: 90px;
-		padding-right: 7px;
-		text-align: right;
-		float: left;
-	}
-	.daytoday{
-		background-color: $color_red !important;
-		position: relative;
-		color: white;
-	}
-	.unday{
-		background-color: darkgray !important;
-		position: relative;
-		
-	}
-	.day{
-		
-		background-color: ghostwhite;
-
-	}
-}
-
-#today {
-	display: block;
-	position: relative;
-	float: right !important;
-	background-color: $color_red !important;
-	margin: 1px;
     left: 50% !important;
-	color: white !important;
-}
-
-
-#bottomwrapper {
-	position: inherit;
-	background-color: $color_darkblue;
-	width: 100%;
-	height: 70px;
-	display: flex;
-	padding: 20px 5vw;
-}
-
-.button_view {
-	border: 0px;
-	border-radius: $button-radius;
-	background-color: $color_blue;
-	margin: 0px 10px !important;
-	color: $font-white;
-	padding: 3px 12px !important;
-	font-size: 13px;
-}
-.button_view:first-child {
-	margin-right: 30px !important;
-}
-
-
-
-#login {
-	position: absolute;
-	top: 25%;
-	left: 30%;
-	display: block;
-	background-color: $color_lightblue;
-	padding: 10px;
-	width: 380px;
-	height: 350px;
-	button {
-		display: block;
-		background-color: $color_darkblue;
-		border: 0px;
-		border-radius: $button-radius;
-		color: $font-white;
-		padding: 8px 12px;
-		margin: 50px auto;
-	}
-	label {
-	margin-left: 70px;
+    color: white !important;
   }
-  label:first-child {
-  	margin-top: 50px;
-  }
-  input:first-child {
-  	margin-top: 0px;
-  	margin-bottom: 90px;
-  }
-  label:last-child {
-  
-  }
-  input {
-  	width: 220px;
-  	height: 40px;
-  	border: 1px solid white;
-  
-  	margin-left: 70px;
-  }
-}
 
+  #bottomwrapper {
+    position: inherit;
+    background-color: $color_darkblue;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    padding: 20px 5vw;
+  }
 
-.glyphicon-remove {
-	float: right;
-	display: block;
-	position: relative;
-	margin-top: 5px;
-	margin-bottom: 20px;
-	margin-left: 300px;
-}
+  .button_view {
+    border: 0px;
+    border-radius: $button-radius;
+    background-color: $color_blue;
+    margin: 0px 10px !important;
+    color: $font-white;
+    padding: 3px 12px !important;
+    font-size: 13px;
+  }
+  .button_view:first-child {
+    margin-right: 30px !important;
+  }
 
-.eventdiv {
-	display: inline-block;
-	position:relative;
-	background-color: cornsilk !important;
-	//color: darkolivegreen;
-	width: 98%;
-	margin-right: -3px !important;
-	margin-bottom: 3px;
-	padding: 2px 3px;
-	border-radius: $button-radius;
-	line-height: 15px;
-	text-align: left;
-	font-size: 14px !important;
-	box-shadow: 0px 0px 1px rgb(38,38,38);
-	color: black;
-	
-	.tid_start {
+  #login {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    display: block;
+    background-color: $color_lightblue;
+    padding: 10px;
+    width: 380px;
+    height: 350px;
+    button {
+      display: block;
+      background-color: $color_darkblue;
+      border: 0px;
+      border-radius: $button-radius;
+      color: $font-white;
+      padding: 8px 12px;
+      margin: 50px auto;
+    }
+    label {
+      margin-left: 70px;
+    }
+    label:first-child {
+      margin-top: 50px;
+    }
+    input:first-child {
+      margin-top: 0px;
+      margin-bottom: 90px;
+    }
+    label:last-child {
 
-		background-color: white;
+    }
+    input {
+      width: 220px;
+      height: 40px;
+      border: 1px solid white;
+
+      margin-left: 70px;
+    }
+  }
+
+  .glyphicon-remove {
+    float: right;
+    display: block;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: 300px;
+  }
+
+  .eventdiv {
+    display: inline-block;
+    position: relative;
+    background-color: cornsilk !important;
+    //color: darkolivegreen;
+    width: 98%;
+    margin-right: -3px !important;
+    margin-bottom: 3px;
+    padding: 2px 3px;
+    border-radius: $button-radius;
+    line-height: 15px;
+    text-align: left;
+    font-size: 14px !important;
+    box-shadow: 0px 0px 1px rgb(38, 38, 38);
+    color: black;
+
+    .tid_start {
+
+      background-color: white;
+      text-align: center;
+      padding-top: 1px;
+      color: black;
+      background-color: cornsilk !important;
+      color: black;
+      position: relative;
+      margin-top: 5px !important;
+    }
+
+    .event_title {
+      padding-top: 1px;
+      position: relative;
+      //font-size: 12px;
+      background-color: white;
+      color: mediumseagreen;
+      background-color: cornsilk !important;
+      color: black;
+      padding-left: 4px !important;
+
+    }
+
+  }
+  // New CSS
+
+  .week.names {
+    display: flex;
+    width: 100%;
+
+    .day {
+      width: 100%;
+      background-color: lighten(#364150, 30%);
+      text-align: center;
+    }
+  }
+
+  .week {
+    display: flex;
+
+    > span.calDay {
+      width: 100%;
+      border: 1px solid #e4e4e4;
+      padding: 5px;
+      height: 75px;
+
+      &.today {
+        background-color: #cdd7e6;
+      }
+      &.isPast {
+        background-color: lighten(#e4e4e4, 5%);
+      }
+      &.selected {
+        background-color: #cde6d6;
+      }
+
+      >.listItem {
+        font-size: 14px;
+        width: 100%;
+        display: block;
         text-align: center;
-		padding-top: 1px;
-		color: black;
-		background-color: cornsilk !important;
-		color: black;
-		position: relative;
-		margin-top: 5px !important;
-	}
+        padding-top: 1px;
+        margin: 1px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        color: black;
+        background-color: cornsilk;
+      }
 
-	.event_title {
-		padding-top: 1px;
-		position: relative;
-		//font-size: 12px;	
-		background-color: white;
-		color: mediumseagreen;
-		background-color: cornsilk !important;
-		color: black;
-		padding-left: 4px !important;
-		
-     }
-}
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 18px;
+    padding: 5px;
+
+    > i {
+      cursor: pointer;
+      user-select: none;
+    }
+  }
 
 }
 

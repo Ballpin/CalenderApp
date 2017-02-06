@@ -1,6 +1,7 @@
 import eventListController from './event-list.controller';
+
 export default angular.
-  module('eventList', []).
+  module('eventList', ['angularMoment']).
   component('eventList', {
     template: require('./event-list.template.html'),
     controller: eventListController

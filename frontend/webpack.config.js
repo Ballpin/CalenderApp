@@ -9,7 +9,7 @@ module.exports = {
   context: path.join(__dirname, '/app'),
   entry: {
     app: './app.js',
-    vendor: ['angular', 'angular-ui-router', 'angular-animate']
+    vendor: ['angular', 'angular-ui-router', 'angular-animate', 'angular-moment']
   },
   output: {
     path: path.resolve('./frontend/webpack_bundles/'),
@@ -18,6 +18,11 @@ module.exports = {
     sourceMapFilename: '[file].map'
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      },
+    }),
     new BundleTracker({filename: './frontend/webpack-stats.json'}),
     new BrowserSyncPlugin({
       // browse to http://localhost:3000/ during development,

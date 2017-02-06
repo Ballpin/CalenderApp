@@ -4,7 +4,6 @@
         class='event-admin-container' 
         ng-submit='$ctrl.addItem()'
         novalidate >
-    <button type='button' ng-click='$ctrl.shouldShow = !$ctrl.shouldShow'>hide</button>
     <div class='event-admin-item'>
       <input type='text'
              placeholder='New event'
@@ -12,25 +11,30 @@
              ng-change='$ctrl.sayHiOnChange($ctrl.newEvent.title)'
              ng-required='true'>
     </div>
-    <div class='event-admin-item'>
+    <div class='event-admin-item' ng-show='$ctrl.newEvent.title'>
       <input type='text'
              class='datepicker'
-             locale='en-UK'
+             locale='sv'
+             format="D MMMM YYYY, HH:mm"
              placeholder="Select start time"
              max-view='hour'
              today='true'
+             min-date='$ctrl.today'
+             max-date='endTime'
              keyboard='true'
              ng-model='$ctrl.newEvent.startTime'
              moment-picker="startTime"
              ng-required='true'></input>
     </div>
-    <div class='event-admin-item'>
+    <div class='event-admin-item' ng-show='startTime'>
       <input type='text'
              class='datepicker'
-             locale='en-UK'
+             locale='sv'
+             format="D MMMM YYYY, HH:mm"
              placeholder="Select end time"
              max-view='hour'
              today='true'
+             min-date='startTime || $ctrl.today'
              keyboard='true'
              ng-model='$ctrl.newEvent.endTime'
              moment-picker="endTime"

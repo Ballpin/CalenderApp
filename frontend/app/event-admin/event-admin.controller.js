@@ -1,12 +1,12 @@
-import moment from 'moment';
 
 export default function($scope, $http) {
-  this.$onInit = () => this.fetchEvents();
+  //this.$onInit = () => this.fetchEvents();
   this.events;
   this.errorText;
   this.shouldShow = false;
   this.newEvent = {};
-
+  this.today = moment();
+  
   $scope.$on('showHideAdmin', (event, bool) => {
     this.shouldShow = bool;
   });

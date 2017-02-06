@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "NODE_ENV=test karma start",
-    "start": "webpack --watch --config 'frontend/webpack.config.js'"
+    "start": "NODE_ENV=dev webpack --watch --config 'frontend/webpack.config.js'",
+    "prod": "NODE_ENV=production webpack --config 'frontend/webpack.config.js'"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,7 @@
     "angular": "^1.6.1",
     "angular-animate": "^1.6.1",
     "angular-datetime-inputs": "^0.1.28",
+    "angular-moment": "^1.0.1",
     "angular-moment-picker": "^0.9.4",
     "angular-ui-router": "^1.0.0-alpha.3",
     "babel-plugin-istanbul": "^3.1.2",

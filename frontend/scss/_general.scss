@@ -6,7 +6,7 @@ main {
   display: flex;
   justify-content: center;
 }
-
-.view {
-  height: 100%;
+.full-width {
+  width: 100%;
+  max-width: 960px;
 }

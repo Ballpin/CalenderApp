@@ -27,14 +27,14 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     padding: 2em;
 
     .event-admin-item {
       margin: 0.5em;
-      min-width: 180px;
+      min-width: 150px;
       &.submit {
         margin-left: 4em;
       }
@@ -47,7 +47,7 @@
         }
       }
     }
-    
+
     .datepicker {
       
     }

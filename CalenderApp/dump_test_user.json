@@ -1,17 +1,53 @@
 [
   {
+    "pk": 9980,
+    "model": "event.event",
+    "fields": {
+      "Title": "Playtime 1",
+      "Start_Time": "2017-02-07T19:00:00Z",
+      "End_Time": "2017-02-07T20:00:00Z"
+    }
+  },
+  {
+    "pk": 9981,
+    "model": "event.event",
+    "fields": {
+      "Title": "Playtime 2",
+      "Start_Time": "2017-02-09T19:00:00Z",
+      "End_Time": "2017-02-09T20:00:00Z"
+    }
+  },
+  {
+    "pk": 9982,
+    "model": "event.event",
+    "fields": {
+      "Title": "Playtime 3",
+      "Start_Time": "2017-02-08T19:00:00Z",
+      "End_Time": "2017-02-08T20:00:00Z"
+    }
+  },
+  {
+    "pk": 9983,
+    "model": "event.event",
+    "fields": {
+      "Title": "Playtime 4",
+      "Start_Time": "2017-02-07T19:00:00Z",
+      "End_Time": "2017-02-07T20:00:00Z"
+    }
+  },
+    {
     "pk": 9998,
     "model": "auth.user",
     "fields": {
       "username": "test1@test.se",
-      "first_name": "Test",
-      "last_name": "Admin",
+      "first_name": "John",
+      "last_name": "Doh",
       "is_active": true,
       "is_staff": true,
       "is_superuser": false,
       "last_login": "1900-01-01T00:00:00Z",
       "user_permissions": [],
-      "password": "pbkdf2_sha256$30000$a73utZYJE4So$MVnXgh3sfSPpuu",
+      "password": "pbkdf2_sha256$30000$0ip4eLBTSjnF$QLyaNhLxwje366Jjpj5cqv0himCZtttW6lNQf8nshuo",
       "email": "test1@test.se",
       "date_joined": "1900-01-01T00:00:00Z"
     }
@@ -21,14 +57,14 @@
     "model": "auth.user",
     "fields": {
       "username": "test@test.se",
-      "first_name": "Test",
-      "last_name": "User",
+      "first_name": "Jane",
+      "last_name": "Doh",
       "is_active": true,
       "is_staff": false,
       "is_superuser": false,
       "last_login": "1900-01-01T00:00:00Z",
       "user_permissions": [],
-      "password": "pbkdf2_sha256$30000$URrRShsFjtAX$rioSYZJWodsVIW3WK783ItiwC",
+      "password": "pbkdf2_sha256$30000$0QtEkzGiog0E$tNKUD0HiTzeuinlHe0EY",
       "email": "test@test.se",
       "date_joined": "1900-01-01T00:00:00Z"
     }
