@@ -1,12 +1,14 @@
 <div id="wrapper">
     <header>
         <span id="logo"> Favana Calender </span>
-        <button id="loggain" ui-sref="users"> LOGGA IN</button>
-        <button id="loggain" ng-click="showAdmin()"> Add event</button>
+        <div class='buttonwrapper'>
+          <button id="loggain" ui-sref="users"> LOGGA IN</button>
+          <button id="loggain" ng-click="showAdmin()"> Add event</button>
+        </div>
     </header>
     <event-admin></event-admin>
 
-    <div class="calender" ng-init="build">
+    <div class="calender">
         <div class="header">
             <i class="fa fa-angle-left" ng-click="previous()"></i>
             <span>{{ month.format("MMMM, YYYY")}}</span>

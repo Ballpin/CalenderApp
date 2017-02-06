@@ -14,7 +14,7 @@ export default function ($scope, eventListFactory, moment, amMoment) {
 
   _buildMonth($scope, start, $scope.month);
 
-  $scope.select = function (day) {$
+  $scope.select = function (day) {
     $scope.selected = day.date;
   };
 
