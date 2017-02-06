@@ -283,6 +283,19 @@ $calender-size-with-margins: $calender-size/7 - $cal-margins;
         background-color: #cde6d6;
       }
 
+      >.listItem {
+        font-size: 14px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding-top: 1px;
+        margin: 1px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        color: black;
+        background-color: cornsilk;
+      }
+
     }
   }
 

@@ -29,7 +29,10 @@
                               selected: day.date.isSame(selected) }"
                   ng-click="select(day)" ng-repeat="day in week.days">
                 {{ day.number }}
-                <span ng-repeat="item in day.listEvents">{{ eventItem }}</span>
+                <br>
+                <span class="listItem" ng-repeat="item in day.listEvents">
+                    {{ item.Start_Time | date: 'HH:mm' }} {{ item.Title }}
+                </span>
             </span>
         </div>
     </div>
