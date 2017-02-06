@@ -61,6 +61,7 @@ export default function ($scope, eventListFactory, moment, amMoment) {
       days.push({
         name: date.format("dd").substring(0, 1),
         number: date.date(),
+        listEvents: getEvents(date),
         isCurrentMonth: date.month() === month.month(),
         isPast: date.isBefore(new Date(), "day"),
         //isAvailable: $rootScope.bookingMonth[date.format('YYYY-MM-DD')],
@@ -71,6 +72,18 @@ export default function ($scope, eventListFactory, moment, amMoment) {
       date.add(1, "d");
     }
     return days;
+  }
+
+  function getEvents(date) {
+    let obj = [];
+    eventListFactory.getList().then((response) => {
+      for (let i = 0; i < response.data.length; i++) {
+        if (moment(date).isSame(moment(response.data[i].Start_Time), 'date')) {
+          obj.push(response.data[i])
+        }
+      }
+    });
+    return obj
   }
 }
 
