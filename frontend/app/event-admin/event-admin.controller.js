@@ -1,6 +1,5 @@
 
 export default function($scope, $http) {
-  //this.$onInit = () => this.fetchEvents();
   this.events;
   this.errorText;
   this.shouldShow = false;

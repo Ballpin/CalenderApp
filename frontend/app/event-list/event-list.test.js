@@ -38,27 +38,15 @@ describe('eventList component', () => {
   });
 
   it('should be defined', () => {
-    expect(scope.previous).not.toBeUndefined();
+    expect(scope).not.toBeUndefined();
   });
 
   it('should have previous function', () => {
-    expect(controller.previous).toBeDefined();
+    expect(scope.previous).toBeDefined();
   });
   
   it('should have next function', () => {
-    expect(controller.next).toBeDefined();
-  }); 
-  
-  
-// check u
-  it('eventListFactory should exist', function () {
-    expect(eventListFactory).toBeDefined();
-  });
-
-  describe('.getList() from eventListFactory', () => {
-    it('should exist', () => {
-      expect(eventListFactory.getList).toBeDefined();
-    });
+    expect(scope.next).toBeDefined();
   }); 
   
   it('should make http call to get the event list', () => {

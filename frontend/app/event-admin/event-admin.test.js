@@ -43,26 +43,10 @@ describe('eventAdmin component', () => {
     expect(console.log).toHaveBeenCalledWith('input field say hi');
   });
 
-  describe('onInit', () => {
-    beforeEach(() => {
-      spyOn(controller, '$onInit').and.callThrough();
-      spyOn(controller, 'fetchEvents');
-      controller.$onInit();
-    });
-
-    it('should call fetchEvents', () => {
-      expect(controller.fetchEvents).toHaveBeenCalled();
-    });
-  });
 
   describe('http requests', () => {
     afterEach(function() {
       $httpBackend.verifyNoOutstandingRequest();
-    });
-    it('should make a get call onInit', () => {
-      $httpBackend.expectGET('/api/').respond(200, []);
-      controller.$onInit();
-      $httpBackend.flush();
     });
     it('should make a get call in fetchEvents', () => {
       $httpBackend.expectGET('/api/').respond(200, []);
