@@ -15,16 +15,18 @@ describe('eventList component', () => {
     $httpBackend = _$httpBackend_;
     eventListFactory = _eventListFactory_;
     moment = _moment_;
+    amMoment = _amMoment_;
     scope = $rootScope.$new();
     element = angular.element('<event-list></event-list>');
     element = $compile(element)(scope);
     scope.$apply();
-    controller = $componentController('eventList', {$scope: scope});
+    controller = $componentController('eventList', null, {$scope: scope, moment, amMoment, eventListFactory});
     });
   });
 
 
   it('should be defined', () => {
+    console.log("controller ? : ", controller)
     expect(scope).not.toBeUndefined();
   });
   
