@@ -140,8 +140,8 @@ http://localhost:8000/accounts/password_reset
 
 | Username  | Password | Permissions |
 | --------- | -------- | ----------- |
-| test1@test.se | Admin123 | Admin       |
-| test@test.se  | User123  | User        |
+| test1@test.se | Admin123! | Admin       |
+| test@test.se  | User123!  | User        |
 
 
 
