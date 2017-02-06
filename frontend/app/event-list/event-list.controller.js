@@ -18,14 +18,16 @@ export default function ($scope, eventListFactory, moment, amMoment) {
     $scope.selected = day.date;
   };
 
-  $scope.next = function () {
+ // $scope.next = function () {
+  this.next = () => {
     let next = $scope.month.clone();
     _removeTime(next.month(next.month() + 1).date(1));
     $scope.month.month($scope.month.month() + 1);
     _buildMonth($scope, next, $scope.month);
   };
 
-  $scope.previous = function () {
+ // $scope.previous = function () {
+  this.previous = () => {
     let previous = $scope.month.clone();
     _removeTime(previous.month(previous.month() - 1).date(1));
     $scope.month.month($scope.month.month() - 1);

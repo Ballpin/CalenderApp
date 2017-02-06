@@ -23,19 +23,30 @@ describe('eventList component', () => {
     });
   });
 
-
+// check controller
   it('should be defined', () => {
     expect(controller).not.toBeUndefined();
   });
 
-//  it('should have a function to add an event', () => {
-//    expect(controller.initCal).toBeDefined();
-//  });
 
-  it('should have a function to add an event', () => {
-    expect(controller.showday).toBeDefined();
+  it('should have previous function', () => {
+    expect(controller.previous).toBeDefined();
   });
   
+  it('should have next function', () => {
+    expect(controller.next).toBeDefined();
+  }); 
   
+  
+// check u
+  it('eventListFactory should exist', function () {
+    expect(eventListFactory).toBeDefined();
+  });
+
+  describe('.getList() from eventListFactory', () => {
+    it('should exist', () => {
+      expect(eventListFactory.getList).toBeDefined();
+    });
+  }); 
   
 });
