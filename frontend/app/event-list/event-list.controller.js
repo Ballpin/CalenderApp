@@ -1,5 +1,12 @@
 export default function ($scope, eventListFactory, moment, amMoment) {
 
+  $scope.showAdmin = () => {
+    $scope.$broadcast('showHideAdmin', true);
+  }
+  /*$scope.$on('eventAdded', () => {
+    $scope.showevent();
+  });*/
+
   $scope.bookingMonth = eventListFactory.getList().then((response) => {
     $scope.bookingMonth = response.data;
   });
