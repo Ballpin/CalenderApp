@@ -62,9 +62,37 @@ describe('eventList component', () => {
     expect(scope.select).toBeDefined();
   });
   
-
-  
   it('should make http call to get the event list', () => {
     expect(mockService.getList).toHaveBeenCalled();
   });
+});
+
+describe('testing factory', () => {
+    var $httpBackend;
+    var eventListFactory
+    
+    beforeEach(() => {
+      angular.mock.module('eventList');
+
+      inject((_eventListFactory_, _$httpBackend_) => {
+        $httpBackend = _$httpBackend_;
+        eventListFactory = _eventListFactory_;
+        
+      })
+    });
+
+    afterEach(() => {
+      $httpBackend.verifyNoOutstandingRequest();
+    });
+
+    it('has a function that sends GET for all events', () => {
+      $httpBackend.expectGET('/api/').respond(200, []);
+      eventListFactory.getList();
+      $httpBackend.flush();
+    });
+    it('has a function that sends GET for a single event', () => {
+      $httpBackend.expectGET('/api/666').respond(200, []);
+      eventListFactory.getSingle(666);
+      $httpBackend.flush();
+    })
 });
