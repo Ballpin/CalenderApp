@@ -32,8 +32,10 @@
                   ng-click="select(day)" ng-repeat="day in week.days">
                 {{ day.number }}
                 <br>
-                <span class="listItem" ng-repeat="item in day.listEvents | orderBy: 'Start_Time'">
+                <span class="listItem" 
+                      ng-repeat="item in day.listEvents | orderBy: 'Start_Time'">
                     {{ item.Start_Time | date: 'HH:mm' }} {{ item.Title }}
+                    <i class='fa fa-remove' ng-click='deleteEvent($event, day.listEvents, $index, item)'></i>
                 </span>
             </span>
         </div>

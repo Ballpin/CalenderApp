@@ -20,6 +20,15 @@ export default function ($scope, eventListFactory, moment, amMoment) {
     $scope.selected = day.date;
   };
 
+  $scope.deleteEvent = (evt, parent, index, item) => {
+    evt.stopPropagation();
+    eventListFactory.deleteSingle(item.id).then(resp => {
+      return parent.splice(index, 1)
+    }, (err) => { 
+      console.warn('Something went wrong trying to delete that event. Perhaps it means you really should be attending?')
+    });
+  }
+
   $scope.next = () => {
     let next = $scope.month.clone();
     _removeTime(next.month(next.month() + 1).date(1));

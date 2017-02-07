@@ -306,6 +306,19 @@ $calender-size-with-margins: $calender-size/7 - $cal-margins;
         border-radius: 5px;
         color: black;
         background-color: cornsilk;
+        &:hover {
+          >i {
+            opacity: 1;
+          }
+        }
+        i {
+          opacity: 0;
+          transition: opacity 0.2s ease;
+        }
+        i:hover {
+          color: red;
+          cursor: pointer;
+        }
       }
 
     }

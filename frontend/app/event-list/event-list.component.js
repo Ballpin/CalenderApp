@@ -17,6 +17,9 @@ export default angular.
     eventListFactory.getSingle = (id) => {
       return $http.get(restEndpoint + id)
     };
+    eventListFactory.deleteSingle = (id) => {
+      return $http.delete(restEndpoint + id)
+    };
 
     return eventListFactory
 
