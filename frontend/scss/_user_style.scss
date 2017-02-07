@@ -324,6 +324,10 @@ $calender-size-with-margins: $calender-size/7 - $cal-margins;
       user-select: none;
     }
   }
+  .different-month {
+    background-color: lighten(#e4e4e4, 5%);
+    color: lighten(#e4e4e4, 5%);
+  }
 
 }
 

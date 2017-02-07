@@ -35,7 +35,8 @@ export default function ($scope, eventListFactory, moment, amMoment) {
   function _removeTime(date) {
     return date.day(1).hour(0).minute(0).second(0).millisecond(0);
   }
-
+  
+  
   function _buildMonth($scope, start, month) {
     $scope.weeks = [];
     let done = false, date = start.clone(), monthIndex = date.month(), count = 0;
@@ -58,6 +59,10 @@ export default function ($scope, eventListFactory, moment, amMoment) {
         isPast: date.isBefore(new Date(), "day"),
         //isAvailable: $rootScope.bookingMonth[date.format('YYYY-MM-DD')],
         isToday: date.isSame(new Date(), "day"),
+       
+       
+        
+      //  isAfter: date.isAfter(new Date(), "day"),
         date: date
       });
       date = date.clone();

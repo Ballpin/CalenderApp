@@ -1,0 +1,177 @@
+#wrapper {
+  height: 50%;
+  margin: 30px auto;
+  display: block;
+  /* button logga in */ }
+  #wrapper * {
+    box-sizing: border-box; }
+  #wrapper .show {
+    display: block; }
+  #wrapper .hide {
+    display: none; }
+  #wrapper header {
+    height: 50px;
+    background-color: #364150;
+    color: white;
+    font-size: 18px;
+    padding: 10px 0px 10px 20px;
+    margin-left: 0px auto; }
+  #wrapper #loggain {
+    width: 80px;
+    height: 30px;
+    padding: 4px 10px;
+    color: white;
+    font-size: 12px;
+    background-color: #36c6d3;
+    border: 0px;
+    border-radius: 3px;
+    left: 50%;
+    position: relative;
+    padding-top: 5px; }
+  #wrapper #month_wrapper {
+    width: 70%;
+    margin: 0px auto;
+    font-size: 20px;
+    text-align: center; }
+  #wrapper #month, #wrapper #lastmonth, #wrapper #nextmonth {
+    display: inline-block;
+    height: 70px;
+    margin: 0px auto;
+    padding-top: 10px; }
+  #wrapper #lastmonth, #wrapper #nextmonth {
+    display: inline-block;
+    width: 50px;
+    margin-top: -1px;
+    padding-top: 23px !important; }
+  #wrapper #lastmonth {
+    float: left; }
+  #wrapper #nextmonth {
+    float: right; }
+  #wrapper #weekday_wrapper {
+    display: flex;
+    color: white;
+    width: 960 !important; }
+    #wrapper #weekday_wrapper .weekday {
+      height: 30px;
+      background-color: #337ab7;
+      text-align: center;
+      margin: 1px;
+      padding: 5px 0 0 0;
+      width: 129.14286px; }
+  #wrapper #show_totaldays {
+    display: inline-block;
+    width: 960px; }
+    #wrapper #show_totaldays .daytoday, #wrapper #show_totaldays .unday, #wrapper #show_totaldays .day {
+      width: 129.14286px !important;
+      display: inline-block;
+      margin: 1px;
+      height: 90px;
+      padding-right: 7px;
+      text-align: right;
+      float: left; }
+    #wrapper #show_totaldays .daytoday {
+      background-color: #e7505a !important;
+      position: relative;
+      color: white; }
+    #wrapper #show_totaldays .unday {
+      background-color: darkgray !important;
+      position: relative; }
+    #wrapper #show_totaldays .day {
+      background-color: ghostwhite; }
+  #wrapper #showtoday {
+    display: block;
+    position: relative;
+    float: right !important;
+    background-color: #e7505a !important;
+    margin: 1px;
+    left: 50% !important;
+    color: white !important; }
+  #wrapper #bottomwrapper {
+    position: inherit;
+    background-color: #364150;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    padding: 20px 5vw; }
+  #wrapper .button_view {
+    border: 0px;
+    border-radius: 3px;
+    background-color: #659be1;
+    margin: 0px 10px !important;
+    color: white;
+    padding: 3px 12px !important;
+    font-size: 13px; }
+  #wrapper .button_view:first-child {
+    margin-right: 30px !important; }
+  #wrapper #login {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    display: block;
+    background-color: #36c6d3;
+    padding: 10px;
+    width: 380px;
+    height: 350px; }
+    #wrapper #login button {
+      display: block;
+      background-color: #364150;
+      border: 0px;
+      border-radius: 3px;
+      color: white;
+      padding: 8px 12px;
+      margin: 50px auto; }
+    #wrapper #login label {
+      margin-left: 70px; }
+    #wrapper #login label:first-child {
+      margin-top: 50px; }
+    #wrapper #login input:first-child {
+      margin-top: 0px;
+      margin-bottom: 90px; }
+    #wrapper #login input {
+      width: 220px;
+      height: 40px;
+      border: 1px solid white;
+      margin-left: 70px; }
+  #wrapper .glyphicon-remove {
+    float: right;
+    display: block;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: 300px; }
+  #wrapper .eventdiv {
+    display: inline-block;
+    position: relative;
+    background-color: cornsilk !important;
+    width: 98%;
+    margin-right: -3px !important;
+    margin-bottom: 3px;
+    padding: 2px 3px;
+    border-radius: 3px;
+    line-height: 15px;
+    text-align: left;
+    font-size: 14px !important;
+    box-shadow: 0px 0px 1px #262626;
+    color: black; }
+    #wrapper .eventdiv .tid_start {
+      background-color: white;
+      text-align: center;
+      padding-top: 1px;
+      color: black;
+      background-color: cornsilk !important;
+      color: black;
+      position: relative;
+      margin-top: 5px !important; }
+    #wrapper .eventdiv .event_title {
+      padding-top: 1px;
+      position: relative;
+      background-color: white;
+      color: mediumseagreen;
+      background-color: cornsilk !important;
+      color: black;
+      padding-left: 4px !important; }
+  #wrapper .calDay .different-month {
+    background-color: indianred !important;
+    color: white; }
+
+/*# sourceMappingURL=event-list.style.css.map */
