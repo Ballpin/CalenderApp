@@ -1,6 +1,7 @@
 
 describe('eventList component', () => {
   var element;
+  var rootScope;
   var scope;
   var controller;
   var $httpBackend;
@@ -15,20 +16,27 @@ describe('eventList component', () => {
     angular.mock.module(function($provide){
       $provide.factory('eventListFactory', function($q){
         function getList(){
-            deferred = $q.defer();
-              return deferred.promise;
-          }
-          return{getList: getList};
+          deferred = $q.defer();
+            return deferred.promise;
+        }
+        function getSingle(){
+          deferred = $q.defer();
+            return deferred.promise;
+        }
+        return{getList: getList, getSingle: getSingle};
       });
     });
 
     inject(function($rootScope, $compile, $controller, $componentController, _$httpBackend_, eventListFactory, _amMoment_, _moment_){
     $httpBackend = _$httpBackend_;
+    rootScope = $rootScope;
     mockService = eventListFactory;
     moment = _moment_;
     amMoment = _amMoment_;
 
+    spyOn(rootScope, '$broadcast').and.callThrough();
     spyOn(mockService, 'getList').and.callThrough();
+    spyOn(mockService, 'getSingle').and.callThrough();
    
     scope = $rootScope.$new();
     element = angular.element('<event-list></event-list>');
@@ -65,6 +73,15 @@ describe('eventList component', () => {
   it('should make http call to get the event list', () => {
     expect(mockService.getList).toHaveBeenCalled();
   });
+
+  it('should broadcast event to ng-show admin panel on click', () => {
+    scope.showAdmin();
+    expect(rootScope.$broadcast).toHaveBeenCalledWith('showHideAdmin', true);
+  });
+  it('should add a single event when event has been added in admin panel', () => {
+    scope.$broadcast('eventAdded', ('event'));
+    expect(mockService.getSingle).toHaveBeenCalledWith('event');
+  })
 });
 
 describe('testing factory', () => {
