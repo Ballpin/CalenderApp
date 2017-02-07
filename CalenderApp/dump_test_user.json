@@ -41,7 +41,7 @@
     "fields": {
       "password": "pbkdf2_sha256$30000$qpugtp%abp)actb^pq9cpnxx^83hmgns1j&j)dpu)jvwi)hkj@$jdzMEndLP77dHp47d3Ojp0WSwMcLLh5cNyRRNogJccE=",
       "last_login": "1900-01-01T00:00:00Z",
-      "is_superuser": false,
+      "is_superuser": true,
       "username": "test1@test.se",
       "first_name": "John",
       "last_name": "Doh",
