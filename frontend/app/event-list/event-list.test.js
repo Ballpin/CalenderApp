@@ -29,6 +29,7 @@ describe('eventList component', () => {
     amMoment = _amMoment_;
 
     spyOn(mockService, 'getList').and.callThrough();
+   
     scope = $rootScope.$new();
     element = angular.element('<event-list></event-list>');
     element = $compile(element)(scope);
@@ -40,6 +41,14 @@ describe('eventList component', () => {
   it('should be defined', () => {
     expect(scope).not.toBeUndefined();
   });
+  
+  it('should have show admin function', () => {
+    expect(scope.showAdmin).toBeDefined();
+  });
+  
+  it('should have selected date function', () => {
+    expect(scope.selected).toBeDefined();
+  });
 
   it('should have previous function', () => {
     expect(scope.previous).toBeDefined();
@@ -48,6 +57,12 @@ describe('eventList component', () => {
   it('should have next function', () => {
     expect(scope.next).toBeDefined();
   }); 
+  
+  it('should have select date function', () => {
+    expect(scope.select).toBeDefined();
+  });
+  
+
   
   it('should make http call to get the event list', () => {
     expect(mockService.getList).toHaveBeenCalled();
