@@ -4,6 +4,8 @@ export default function ($scope, eventListFactory, moment, amMoment) {
     $scope.$broadcast('showHideAdmin', true);
   };
 
+  $scope.$on('eventAdded', (event, id) => { getSingleEvent(id)});
+
   $scope.selected = _removeTime($scope.selected || moment());
 
   $scope.month = $scope.selected.clone();
@@ -69,6 +71,18 @@ export default function ($scope, eventListFactory, moment, amMoment) {
       date.add(1, "d");
     }
     return days;
+  }
+
+  function getSingleEvent(id) {
+    console.log("fetching event id ", id)
+    eventListFactory.getSingle(id).then(response => {
+      console.log("response from getSingleEvent");
+      for (var i = 0; i < $scope.weeks.length; i++) {
+        for(var j = 0; j < $scope.weeks[i].days.length; j++) {
+          // do something
+        }
+      }
+    })
   }
 
   function getEvents(date) {

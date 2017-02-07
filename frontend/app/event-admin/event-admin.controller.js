@@ -37,7 +37,7 @@ export default function($scope, $http) {
     }).then((resp) => {
     // this callback will be called asynchronously
     // when the response is available
-      $scope.$emit('eventAdded');
+      $scope.$emit('eventAdded', resp.data.id);
       this.shouldShow = false;
       this.newEvent = {};
     }, (err) => {

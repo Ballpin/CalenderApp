@@ -15,7 +15,7 @@ export default angular.
     };
 
     eventListFactory.getSingle = (id) => {
-      return $http.get(restEndpoint + '/' + id)
+      return $http.get(restEndpoint + id)
     };
 
     return eventListFactory
