@@ -47,7 +47,7 @@
       "is_superuser": false,
       "last_login": "1900-01-01T00:00:00Z",
       "user_permissions": [],
-      "password": "pbkdf2_sha256$30000$0ip4eLBTSjnF$QLyaNhLxwje366Jjpj5cqv0himCZtttW6lNQf8nshuo",
+      "password": "pbkdf2_sha256$30000$V7TGiCtCXdir$THHFzMGA7Y19/MkBvyM3wSmihog28cvQ53zEdR5eGnM=",
       "email": "test1@test.se",
       "date_joined": "1900-01-01T00:00:00Z"
     }
