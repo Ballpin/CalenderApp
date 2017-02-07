@@ -74,12 +74,12 @@ export default function ($scope, eventListFactory, moment, amMoment) {
   }
 
   function getSingleEvent(id) {
-    console.log("fetching event id ", id)
     eventListFactory.getSingle(id).then(response => {
-      console.log("response from getSingleEvent");
       for (var i = 0; i < $scope.weeks.length; i++) {
         for(var j = 0; j < $scope.weeks[i].days.length; j++) {
-          // do something
+          if (moment(response.data.Start_Time).isSame(moment($scope.weeks[i].days[j].date), 'date')) {
+            $scope.weeks[i].days[j].listEvents.push(response.data);
+          }
         }
       }
     })
