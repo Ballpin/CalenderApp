@@ -32,7 +32,7 @@
                   ng-click="select(day)" ng-repeat="day in week.days">
                 {{ day.number }}
                 <br>
-                <span class="listItem" ng-repeat="item in day.listEvents">
+                <span class="listItem" ng-repeat="item in day.listEvents | orderBy: 'Start_Time'">
                     {{ item.Start_Time | date: 'HH:mm' }} {{ item.Title }}
                 </span>
             </span>
