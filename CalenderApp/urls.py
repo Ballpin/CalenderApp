@@ -31,7 +31,7 @@ urlpatterns = [
 
     # API Urls
     url(r'^api/$', views.EventsList.as_view()),
-    url(r'^api/(?P<pk>[0-9]+)$', views.EventDetail.as_view()),
+    url(r'^api/(?P<pk>[0-9]+)?$', views.EventDetail.as_view()),
     url(r'api/users/', include('accounts.api.urls')),
 
     # Swallow all the urls to Angular
