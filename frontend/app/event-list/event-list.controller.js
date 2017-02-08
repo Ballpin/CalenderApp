@@ -20,8 +20,7 @@ export default function ($scope, eventListFactory, moment, amMoment) {
     $scope.selected = day.date;
   };
 
-  $scope.deleteEvent = (evt, parent, index, item) => {
-    evt.stopPropagation();
+  $scope.deleteEvent = (parent, index, item) => {
     eventListFactory.deleteSingle(item.id).then(resp => {
       return parent.splice(index, 1)
     }, (err) => { 

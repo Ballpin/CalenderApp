@@ -41,24 +41,30 @@ $calender-size-with-margins: $calender-size/7 - $cal-margins;
     align-items: center;
     background-color: $color_darkblue;
     color: $font_white;
-    font-size: 18px;
+    font-size: 16px;
     padding: 15px 20px;
     width: 100%;
-
+    >#logo {
+      font-size: 2.4em;
+    }
   }
   /* button logga in */
   .buttonwrapper {
+    font-family: "Roboto", sans-serif;
     display: flex;
     justify-content: space-between;
     width: 50%;
     max-width: 200px;
+    button:last-of-type {
+      margin-left: 1rem;
+    }
   }
   #loggain {
     width: 80px;
     height: 30px;
     padding: 4px 10px;
     color: $font_white;
-    font-size: 12px;
+    font-size: 0.7em;
     background-color: $color_lightblue;
     border: 0px;
     border-radius: $button-radius;

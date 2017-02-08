@@ -1,9 +1,9 @@
 <div id="wrapper">
     <header>
-        <span id="logo"> Favana Calender </span>
+        <span id="logo">Favana Calendar</span>
         <div class='buttonwrapper'>
-          <button id="loggain" ui-sref="users"> LOGGA IN</button>
-          <button id="loggain" ng-click="showAdmin()"> Add event</button>
+          <button id="loggain" ui-sref="users">Login</button>
+          <button id="loggain" ng-click="showAdmin()">Add event</button>
         </div>
     </header>
     <event-admin></event-admin>
@@ -35,7 +35,7 @@
                 <span class="listItem" 
                       ng-repeat="item in day.listEvents | orderBy: 'Start_Time'">
                     {{ item.Start_Time | date: 'HH:mm' }} {{ item.Title }}
-                    <i class='fa fa-remove' ng-click='deleteEvent($event, day.listEvents, $index, item)'></i>
+                    <i class='fa fa-remove' ng-click='deleteEvent(day.listEvents, $index, item)'></i>
                 </span>
             </span>
         </div>

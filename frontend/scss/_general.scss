@@ -2,9 +2,11 @@
 @include sticky-footer(30px, 'main');
 
 // Set Main to cover whole page
+
 main {
   display: flex;
   justify-content: center;
+  font-family: "Roboto", sans-serif;
 }
 .full-width {
   width: 100%;
