@@ -289,7 +289,8 @@ $calender-size-with-margins: $calender-size/7 - $cal-margins;
       border: 1px solid #e4e4e4;
       padding: 5px;
       height: 100px;
-      overflow-y: scroll;
+      overflow-y: auto;
+      overflow-x: hidden;
 
       &.today {
         background-color: #cdd7e6;
