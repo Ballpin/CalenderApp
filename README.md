@@ -22,6 +22,35 @@
 
 
 
+## For Teacher
+
+1. Clone the project
+
+ ```
+ $ git clone git@github.com:Ballpin/CalenderApp.git
+ ```
+
+2. Install NPM Modules
+
+ ```
+ $ npm install
+ ```
+
+3. Run the Docker Container
+
+ ```
+ $ docker-compose up
+ ```
+
+4. Run NPM
+
+ ```
+ $ npm start
+ ```
+
+5. Go to http://localhost:8000/
+
+
 
 ## First Time Instructions
 
@@ -50,14 +79,6 @@
  ```
  $ docker-compose run web python manage.py createsuperuser
  ```
-
-5. Migrate the database
-
- ```
- $ docker-compose run web python manage.py migrate
- ```
-
-
 
 ## Docker
 
@@ -138,8 +159,8 @@ http://localhost:8000/accounts/password_reset
 
 ### Test Users
 
-| Username  | Password | Permissions |
-| --------- | -------- | ----------- |
+| Username      | Password  | Permissions |
+| ------------- | --------- | ----------- |
 | test1@test.se | Admin123! | Admin       |
 | test@test.se  | User123!  | User        |
 
