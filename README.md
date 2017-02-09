@@ -2,6 +2,7 @@
 
 - [Calender app](#calender-app)
   * [Requirements](#requirements)
+  * [For Teacher](#for-teacher)
   * [First Time Instructions](#first-time-instructions)
   * [Docker](#docker)
     + [Info](#info)
