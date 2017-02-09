@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf import settings
+from rest_framework_jwt.views import obtain_jwt_token
 # from django.contrib.auth import views as auth_views, urls
 from rest_framework.urlpatterns import format_suffix_patterns
 from event import views
@@ -33,7 +34,7 @@ urlpatterns = [
     url(r'^api/$', views.EventsList.as_view()),
     url(r'^api/(?P<pk>[0-9]+)$', views.EventDetail.as_view()),
     url(r'api/users/', include('accounts.api.urls')),
-
+    url(r'^api-token-auth/', obtain_jwt_token),
     # Swallow all the urls to Angular
     url(r'', include('event.urls')),
 ]

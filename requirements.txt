@@ -6,3 +6,4 @@ django-filter
 django-webpack-loader
 django-cors-headers
 django-cors-middleware
+djangorestframework-jwt

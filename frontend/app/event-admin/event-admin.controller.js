@@ -33,7 +33,10 @@ export default function($scope, $http) {
     $http({
       method: 'POST',
       url: '/api/',
-      data: event
+      data: event,
+      headers: {
+        'Authorization': 'JWT ' + sessionStorage.getItem('token')
+      }
     }).then((resp) => {
     // this callback will be called asynchronously
     // when the response is available
